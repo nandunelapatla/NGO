@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+@theme {
+  --font-heading: 'Poppins', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  --color-primary: #1B5E20;
+  --color-primary-light: #2E7D32;
+  --color-primary-dark: #145214;
+  --color-accent: #FFC107;
+  --color-accent-dark: #F9A825;
+  --color-dark-bg: #0f172a;
+  --color-dark-surface: #1e293b;
+  --color-dark-border: #334155;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #1B5E20;
+  border-radius: 10px;
+}
+.dark ::-webkit-scrollbar-track {
+  background: #1e293b;
+}
+
+/* Counter animation */
+@keyframes countUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Masonry gallery */
+.masonry-grid {
+  columns: 3;
+  column-gap: 1rem;
+}
+@media (max-width: 768px) {
+  .masonry-grid {
+    columns: 2;
+  }
+}
+@media (max-width: 480px) {
+  .masonry-grid {
+    columns: 1;
+  }
+}
+.masonry-item {
+  break-inside: avoid;
+  margin-bottom: 1rem;
+}
+
+/* Toast overrides */
+.Toastify__toast {
+  font-family: var(--font-body) !important;
+  border-radius: 12px !important;
+}
